@@ -3,12 +3,12 @@ import dotenv from "dotenv";
 import { createTodo, updateTodo } from "./types.js";
 import todo from "./db.js";
 
-dotenv.config()
+dotenv.config();
 const app = express();
 
 app.use(express.json());
 
-app.get("/todo", async (req, res) => {
+app.post("/todo", async (req, res) => {
   const createPayload = req.body;
   const parsedPayload = createTodo.safeParse(createPayload);
   if (!parsedPayload.success) {
@@ -34,7 +34,7 @@ app.get("/todos", async (req, res) => {
   });
 });
 
-app.get("/completed", async (req, res) => {
+app.put("/completed", async (req, res) => {
   const updatePayload = req.body;
   const parsedPayload = updateTodo.safeParse(updatePayload);
   if (!parsedPayload.success) {
@@ -43,13 +43,9 @@ app.get("/completed", async (req, res) => {
     });
     return;
   }
-  await todo.update(
-    {
-      _id: req.body.id,
-    },
-    {
-      completed: true,
-    }
+  await todo.updateOne(
+    { _id: parsedPayload.data.id },
+    { $set: { completed: true } }
   );
   res.json({
     msg: "Todo marked as completed",
