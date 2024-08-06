@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { createTodo, updateTodo } from "./types.js";
 import todo from "./db.js";
 
@@ -7,6 +8,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.post("/todo", async (req, res) => {
   const createPayload = req.body;
@@ -49,6 +51,21 @@ app.put("/completed", async (req, res) => {
   );
   res.json({
     msg: "Todo marked as completed",
+  });
+});
+
+app.delete("/delete", async (req, res) => {
+  const updatePayload = req.body;
+  const parsedPayload = updateTodo.safeParse(updatePayload);
+  if (!parsedPayload.success) {
+    res.status(400).json({
+      msg: "You sent wrong inputs",
+    });
+    return;
+  }
+  await todo.deleteOne({ _id: parsedPayload.data.id });
+  res.json({
+    msg: "Todo deleted as successfully",
   });
 });
 
