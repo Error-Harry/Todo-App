@@ -19,6 +19,7 @@ function App() {
   };
   return (
     <>
+      <h1 className="center-div">Todo App</h1>
       <CreateTodos fetchTodos={fetchTodos} />
       <DisplayTodos todos={todos} fetchTodos={fetchTodos} />
     </>

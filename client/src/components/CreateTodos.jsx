@@ -18,14 +18,14 @@ function CreateTodos({ fetchTodos }) {
         return res.json();
       })
       .then(() => {
-        fetchTodos()
-        alert("Todo Added Successfully");
+        fetchTodos();
         setTitle("");
         setDescription("");
+        alert("Todo Added Successfully");
       });
   };
   return (
-    <div>
+    <div className="center-div col">
       <input
         type="text"
         placeholder="Enter a title"
@@ -33,8 +33,6 @@ function CreateTodos({ fetchTodos }) {
           setTitle(event.target.value);
         }}
       />
-      <br />
-      <br />
       <input
         type="text"
         placeholder="Enter a description"
@@ -42,8 +40,6 @@ function CreateTodos({ fetchTodos }) {
           setDescription(event.target.value);
         }}
       />
-      <br />
-      <br />
       <button type="submit" onClick={handleClick}>
         Add Todo
       </button>

@@ -15,7 +15,22 @@ th {
   background-color: #f2f2f2;
 }
 
+input {
+  margin: 5px;
+}
+
 .delete-btn {
   margin-left: 1rem;
   color: red;
+}
+
+.center-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  flex-direction: column;
+  margin: 1rem;
 }
