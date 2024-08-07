@@ -95,6 +95,3 @@ PORT= your_port_number
 3. Start the server:
    ```bash
    npm run dev
-   
-   
- 
