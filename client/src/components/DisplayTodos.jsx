@@ -29,7 +29,6 @@ function DisplayTodos({ todos, fetchTodos }) {
       });
   };
 
-  console.log(todos.length)
   return (
     <div id="main">
       {todos.length > 0 ? (
