@@ -81,7 +81,6 @@ PORT= your_port_number
    ```bash
    node index.js
    
-   
 ### Running the Client
 
 1. Navigate to the server directory:
