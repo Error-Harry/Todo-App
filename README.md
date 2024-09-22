@@ -29,12 +29,11 @@ Ensure you have the following installed on your system:
 ### .env Setup
 
 Create a `.env` file in the `server` directory and add the following:
+   ```plaintext
+    MONGODB_CONNECTION_URL= "Your mongoDB URL"
+    PORT= 3000
 
-MONGODB_CONNECTION_URL= your_mongodb_connection_url
-
-PORT= your_port_number
-
-
+```
 ### Running the Server
 
 1. Navigate to the server directory:
