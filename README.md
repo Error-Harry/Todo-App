@@ -62,3 +62,7 @@ PORT= your_port_number
 3. Start the server:
    ```bash
    npm run dev
+
+## Usage
+- Access the frontend at `http://localhost:5173/`
+- Access the backend at `http://localhost:3000/`
