@@ -1,6 +1,6 @@
 function DisplayTodos({ todos, fetchTodos }) {
   const handleCompletedClick = (id) => {
-    fetch("http://localhost:3000/completed", {
+    fetch("${import.meta.env.VITE_API_URL}/completed", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
@@ -15,7 +15,7 @@ function DisplayTodos({ todos, fetchTodos }) {
   };
 
   const handleDelete = (id) => {
-    fetch("http://localhost:3000/delete", {
+    fetch(`${import.meta.env.VITE_API_URL}/delete`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",

@@ -34,6 +34,12 @@ Create a `.env` file in the `server` directory and add the following:
     PORT= 3000
 
 ```
+
+Create a `.env` file in the `client` directory and add the following:
+   ```plaintext
+    VITE_API_URL=http://localhost:3000
+
+```
 ### Running the Server
 
 1. Navigate to the server directory:

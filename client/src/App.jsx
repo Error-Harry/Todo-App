@@ -11,7 +11,7 @@ function App() {
   }, []);
 
   const fetchTodos = () => {
-    fetch("http://localhost:3000/todos")
+    fetch(`${import.meta.env.VITE_API_URL}/todos`)
       .then((res) => res.json())
       .then((data) => {
         setTodos(data.allTodos);

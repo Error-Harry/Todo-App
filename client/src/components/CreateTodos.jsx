@@ -4,7 +4,7 @@ function CreateTodos({ fetchTodos }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const handleClick = () => {
-    fetch("http://localhost:3000/todo", {
+    fetch(`${import.meta.env.VITE_API_URL}/todo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
